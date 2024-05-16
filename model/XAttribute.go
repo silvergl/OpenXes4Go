@@ -1,19 +1,19 @@
-package attributes
+package model
 
 type XAttribute struct {
 	XAttributable
 
-	key        string
-	extensions []XExtension
+	Key        string
+	Extensions []XExtension
 	attributes map[string]XAttribute
 }
 
 /*
  * Empty Attribute
  */
-func NewXAtributeEmpty(key string) (*XAttribute, error) {
+func NewXAttributeEmpty(key string) (*XAttribute, error) {
 	attr := &XAttribute{
-		key: key,
+		Key: key,
 
 		XAttributable: XAttributable{
 			attributes: make([]XAttribute, 0),
@@ -25,10 +25,10 @@ func NewXAtributeEmpty(key string) (*XAttribute, error) {
 /*
  * Creates New Attribute
  */
-func NewXAtribute(key string, extensions []XExtension) (*XAttribute, error) {
+func NewXAttribute(key string, extensions []XExtension) (*XAttribute, error) {
 	attr := &XAttribute{
-		key:        "0",
-		extensions: extensions,
+		Key:        "0",
+		Extensions: extensions,
 		XAttributable: XAttributable{
 			attributes: make([]XAttribute, 0),
 		},

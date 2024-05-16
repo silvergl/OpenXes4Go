@@ -1,4 +1,4 @@
-package main
+package model
 
 type XElement struct {
 	XAttributable
@@ -16,7 +16,7 @@ type XTrace struct {
 type XLog struct {
 	XElement
 	traces                []XTrace
-	globalTraceAttrbutes  []XAttribute
+	globalTraceAttributes []XAttribute
 	globalEventAttributes []XAttribute
 
 	extensions  []XExtension

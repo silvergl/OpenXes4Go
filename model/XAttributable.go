@@ -1,10 +1,10 @@
-package attributes
+package model
 
 type XAttributable struct {
 	attributes []XAttribute
 }
 
-func NewXAtributable(attributes []XAttribute) (*XAttributable, error) {
+func NewXAttributable(attributes []XAttribute) (*XAttributable, error) {
 	attr := &XAttributable{
 		attributes: attributes,
 	}
