@@ -1,10 +1,12 @@
-package model
+package attributes
+
+import "github.com/openxes4go/model"
 
 type XAttribute struct {
 	XAttributable
 
 	Key        string
-	Extensions []XExtension
+	Extensions []model.XExtension
 	attributes map[string]XAttribute
 }
 
@@ -25,7 +27,7 @@ func NewXAttributeEmpty(key string) (*XAttribute, error) {
 /*
  * Creates New Attribute
  */
-func NewXAttribute(key string, extensions []XExtension) (*XAttribute, error) {
+func NewXAttribute(key string, extensions []model.XExtension) (*XAttribute, error) {
 	attr := &XAttribute{
 		Key:        "0",
 		Extensions: extensions,

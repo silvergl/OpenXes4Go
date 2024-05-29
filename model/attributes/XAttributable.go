@@ -1,4 +1,4 @@
-package model
+package attributes
 
 type XAttributable struct {
 	attributes []XAttribute

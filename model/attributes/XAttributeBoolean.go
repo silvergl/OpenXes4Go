@@ -5,7 +5,7 @@ import (
 )
 
 type XAttributeBoolean struct {
-	model.XAttribute
+	XAttribute
 	value bool
 }
 
@@ -14,7 +14,7 @@ type XAttributeBoolean struct {
  */
 func NewXAttributeBoolean(key string, value bool, extensions []model.XExtension) (*XAttributeBoolean, error) {
 	attr := &XAttributeBoolean{
-		XAttribute: model.XAttribute{
+		XAttribute: XAttribute{
 			Key:        key,
 			Extensions: extensions,
 		},

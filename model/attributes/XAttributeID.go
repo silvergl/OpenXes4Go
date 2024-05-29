@@ -3,14 +3,14 @@ package attributes
 import "github.com/openxes4go/model"
 
 type XAttributeID struct {
-	model.XAttribute
+	XAttribute
 
 	value string //TODO ID OWN TYPE
 }
 
 func NewXAttributeID(key string, value string, extensions []model.XExtension) (*XAttributeID, error) {
 	attr := &XAttributeID{
-		XAttribute: model.XAttribute{
+		XAttribute: XAttribute{
 			Key:        key,
 			Extensions: extensions,
 		},

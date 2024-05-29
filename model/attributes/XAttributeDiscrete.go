@@ -3,14 +3,14 @@ package attributes
 import "github.com/openxes4go/model"
 
 type XAttributeDiscrete struct {
-	model.XAttribute
+	XAttribute
 
 	value int
 }
 
 func NewXAttributeDiscrete(key string, value int, extensions []model.XExtension) (*XAttributeDiscrete, error) {
 	attr := &XAttributeDiscrete{
-		XAttribute: model.XAttribute{
+		XAttribute: XAttribute{
 			Key:        key,
 			Extensions: extensions,
 		},
