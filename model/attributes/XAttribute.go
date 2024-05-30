@@ -1,6 +1,8 @@
 package attributes
 
-import "github.com/openxes4go/model"
+import (
+	"github.com/openxes4go/model"
+)
 
 type XAttribute struct {
 	XAttributable
@@ -18,7 +20,7 @@ func NewXAttributeEmpty(key string) (*XAttribute, error) {
 		Key: key,
 
 		XAttributable: XAttributable{
-			attributes: make([]XAttribute, 0),
+			Attributes: make([]XAttribute, 0),
 		},
 	}
 	return attr, nil
@@ -32,7 +34,7 @@ func NewXAttribute(key string, extensions []model.XExtension) (*XAttribute, erro
 		Key:        "0",
 		Extensions: extensions,
 		XAttributable: XAttributable{
-			attributes: make([]XAttribute, 0),
+			Attributes: make([]XAttribute, 0),
 		},
 	}
 	return attr, nil

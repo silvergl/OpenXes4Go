@@ -1,12 +1,12 @@
 package attributes
 
 type XAttributable struct {
-	attributes []XAttribute
+	Attributes []XAttribute
 }
 
 func NewXAttributable(attributes []XAttribute) (*XAttributable, error) {
 	attr := &XAttributable{
-		attributes: attributes,
+		Attributes: attributes,
 	}
 	return attr, nil
 }

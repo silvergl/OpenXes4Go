@@ -5,7 +5,7 @@ import "github.com/openxes4go/model"
 type XAttributeLiteral struct {
 	XAttribute
 
-	value string
+	Value string `xml:"value,attr"`
 }
 
 func NewXAttributeLiteral(key string, value string, extensions []model.XExtension) (*XAttributeLiteral, error) {
@@ -14,7 +14,7 @@ func NewXAttributeLiteral(key string, value string, extensions []model.XExtensio
 			Key:        key,
 			Extensions: extensions,
 		},
-		value: value,
+		Value: value,
 	}
 
 	return attr, nil
