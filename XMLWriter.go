@@ -7,21 +7,22 @@ import (
 	"os"
 )
 
-type FromXMLToModel struct {
-	file os.File
-}
-
-func (f *FromXMLToModel) parseFile() model.XLog {
-	x := model.XLog{}
-	xlog := model.XLog{}
-	return x
-}
-
-func writeFIle(log model.XLog) {
-	xmlData, err := xml.MarshalIndent(log, "", "  ")
+func WriteFile(log model.XLog) error {
+	bytes, err := xml.Marshal(log)
 	if err != nil {
 		fmt.Println("Error marshalling to XML:", err)
-		return
+		return err
 	}
-	xmlData = []byte(xml.Header + string(xmlData))
+	file, err2 := os.Create("output.xml")
+	if err2 != nil {
+		return err2
+	}
+	defer file.Close()
+
+	_, err3 := file.Write(bytes)
+	if err3 != nil {
+		return err3
+	}
+	return nil
+
 }

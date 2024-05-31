@@ -3,6 +3,7 @@ package model
 import (
 	"encoding/xml"
 	"fmt"
+	"github.com/openxes4go/model/attributes"
 )
 
 type XLog struct {
@@ -13,8 +14,8 @@ type XLog struct {
 	OpenXesVersion        string
 	Xmlns                 string
 	Traces                []XTrace
-	GlobalTraceAttributes []Global
-	GlobalEventAttributes []Global
+	GlobalTraceAttributes []attributes.XAttribute
+	GlobalEventAttributes []attributes.XAttribute
 	extensions            []XExtension
 	classifiers           []XClassifier
 }
@@ -42,6 +43,7 @@ func (x XLog) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 	}
 	// Marshal the MaleFriends with gender attribute
 	for _, globalEvent := range x.GlobalEventAttributes {
+
 		attrElem := xml.StartElement{Name: xml.Name{Local: fmt.Sprintf("%T\n key", globalEvent.Key)}}
 		attrElem.Attr = []xml.Attr{{Name: xml.Name{Local: "key"}, Value: globalEvent.Key}}
 
