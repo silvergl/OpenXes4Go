@@ -6,15 +6,18 @@ type XAttributeTimeStamp struct {
 	XAttribute
 
 	value string
+
+	Key        string
+	Extensions []model.XExtension
+	attributes map[string]XAttribute
 }
 
 func NewXAttributeDTimeStamp(key string, value string, extensions []model.XExtension) (*XAttributeTimeStamp, error) {
+
 	attr := &XAttributeTimeStamp{
-		XAttribute: XAttribute{
-			Key:        key,
-			Extensions: extensions,
-		},
-		value: value,
+		Key:        key,
+		Extensions: extensions,
+		value:      value,
 	}
 
 	return attr, nil

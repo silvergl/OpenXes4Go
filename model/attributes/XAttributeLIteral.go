@@ -6,15 +6,17 @@ type XAttributeLiteral struct {
 	XAttribute
 
 	Value string `xml:"value,attr"`
+
+	Key        string
+	Extensions []model.XExtension
+	attributes map[string]XAttribute
 }
 
 func NewXAttributeLiteral(key string, value string, extensions []model.XExtension) (*XAttributeLiteral, error) {
 	attr := &XAttributeLiteral{
-		XAttribute: XAttribute{
-			Key:        key,
-			Extensions: extensions,
-		},
-		Value: value,
+		Key:        key,
+		Extensions: extensions,
+		Value:      value,
 	}
 
 	return attr, nil

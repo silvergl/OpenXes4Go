@@ -6,19 +6,22 @@ import (
 
 type XAttributeBoolean struct {
 	XAttribute
-	value bool
+	Value      bool
+	Key        string
+	Extensions []model.XExtension
+	attributes map[string]XAttribute
 }
+
+func (attr XAttributeBoolean) XAttributeMarker() {}
 
 /*
  * New XAttributeBoolean
  */
 func NewXAttributeBoolean(key string, value bool, extensions []model.XExtension) (*XAttributeBoolean, error) {
 	attr := &XAttributeBoolean{
-		XAttribute: XAttribute{
-			Key:        key,
-			Extensions: extensions,
-		},
-		value: value,
+		Key:        key,
+		Extensions: extensions,
+		Value:      value,
 	}
 	return attr, nil
 

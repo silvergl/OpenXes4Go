@@ -4,16 +4,20 @@ import "github.com/silvergl/OpenXes4Go/model"
 
 type XAttributeContinuos struct {
 	XAttribute
-	value float64
+	Value float64
+
+	Key        string
+	Extensions []model.XExtension
+	attributes map[string]XAttribute
 }
+
+func (attr XAttributeContinuos) XAttributeMarker() {}
 
 func NewXAttributeContinuos(key string, value float64, extensions []model.XExtension) (*XAttributeContinuos, error) {
 	attr := &XAttributeContinuos{
-		XAttribute: XAttribute{
-			Key:        key,
-			Extensions: extensions,
-		},
-		value: value,
+		Key:        key,
+		Extensions: extensions,
+		Value:      value,
 	}
 
 	return attr, nil

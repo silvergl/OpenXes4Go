@@ -5,16 +5,20 @@ import "github.com/silvergl/OpenXes4Go/model"
 type XAttributeDiscrete struct {
 	XAttribute
 
-	value int
+	Value int
+
+	Key        string
+	Extensions []model.XExtension
+	attributes map[string]XAttribute
 }
+
+func (attr XAttributeDiscrete) XAttributeMarker() {}
 
 func NewXAttributeDiscrete(key string, value int, extensions []model.XExtension) (*XAttributeDiscrete, error) {
 	attr := &XAttributeDiscrete{
-		XAttribute: XAttribute{
-			Key:        key,
-			Extensions: extensions,
-		},
-		value: value,
+		Key:        key,
+		Extensions: extensions,
+		Value:      value,
 	}
 
 	return attr, nil
