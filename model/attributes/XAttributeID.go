@@ -1,6 +1,6 @@
 package attributes
 
-import "github.com/openxes4go/model"
+import "github.com/silvergl/OpenXes4Go/model"
 
 type XAttributeID struct {
 	XAttribute

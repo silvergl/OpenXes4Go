@@ -3,7 +3,7 @@ package OpenXes4Go
 import (
 	"encoding/xml"
 	"fmt"
-	"github.com/openxes4go/model"
+	"github.com/silvergl/OpenXes4Go/model"
 	"os"
 )
 

@@ -3,7 +3,7 @@ package model
 import (
 	"encoding/xml"
 	"fmt"
-	"github.com/openxes4go/model/attributes"
+	"github.com/silvergl/OpenXes4Go/model/attributes"
 )
 
 type XLog struct {
