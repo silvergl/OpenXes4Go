@@ -1,3 +1,3 @@
-module github.com/silvergl/OpenXes4Go
+module github.com/silvergl/openxes4go
 
 go 1.22.4
