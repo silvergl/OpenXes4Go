@@ -1,6 +1,8 @@
 package attributes
 
-import "github.com/silvergl/OpenXes4Go/model"
+import (
+	"github.com/silvergl/OpenXes4Go/model/extensions"
+)
 
 type XAttributeID struct {
 	XAttribute
@@ -8,11 +10,11 @@ type XAttributeID struct {
 	Value string //TODO ID OWN TYPE
 
 	Key        string
-	Extensions []model.XExtension
+	Extensions []extensions.XExtension
 	attributes map[string]XAttribute
 }
 
-func NewXAttributeID(key string, value string, extensions []model.XExtension) (*XAttributeID, error) {
+func NewXAttributeID(key string, value string, extensions []extensions.XExtension) (*XAttributeID, error) {
 	attr := &XAttributeID{
 		Key:        key,
 		Extensions: extensions,

@@ -1,6 +1,8 @@
 package attributes
 
-import "github.com/silvergl/OpenXes4Go/model"
+import (
+	"github.com/silvergl/OpenXes4Go/model/extensions"
+)
 
 type XAttributeTimeStamp struct {
 	XAttribute
@@ -8,11 +10,11 @@ type XAttributeTimeStamp struct {
 	value string
 
 	Key        string
-	Extensions []model.XExtension
+	Extensions []extensions.XExtension
 	attributes map[string]XAttribute
 }
 
-func NewXAttributeDTimeStamp(key string, value string, extensions []model.XExtension) (*XAttributeTimeStamp, error) {
+func NewXAttributeDTimeStamp(key string, value string, extensions []extensions.XExtension) (*XAttributeTimeStamp, error) {
 
 	attr := &XAttributeTimeStamp{
 		Key:        key,
