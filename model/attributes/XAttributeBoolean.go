@@ -8,7 +8,23 @@ type XAttributeBoolean struct {
 	attributes map[string]XAttribute
 }
 
-func (attr XAttributeBoolean) XAttributeMarker() {}
+func (attr XAttributeBoolean) XAttributeMarker() {
+}
+
+func (attr XAttributeBoolean) GetExtensions() []XExtension {
+	return attr.Extensions
+}
+
+func (attr XAttributeBoolean) GetExtension(name string) map[string]XAttribute {
+	return attr.attributes
+}
+
+func (attr XAttributeBoolean) GetValue() bool {
+	return attr.Value
+}
+func (attr XAttributeBoolean) GetKey() string {
+	return attr.Key
+}
 
 /*
  * New XAttributeBoolean

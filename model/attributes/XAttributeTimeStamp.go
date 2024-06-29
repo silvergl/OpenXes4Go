@@ -3,19 +3,36 @@ package attributes
 type XAttributeTimeStamp struct {
 	XAttribute
 
-	value string
+	Value string
 
 	Key        string
 	Extensions []XExtension
 	attributes map[string]XAttribute
 }
 
+func (attr XAttributeTimeStamp) XAttributeMarker() {
+}
+
+func (attr XAttributeTimeStamp) GetExtensions() []XExtension {
+	return attr.Extensions
+}
+
+func (attr XAttributeTimeStamp) GetExtension(name string) map[string]XAttribute {
+	return attr.attributes
+}
+
+func (attr XAttributeTimeStamp) GetValue() string {
+	return attr.Value
+}
+func (attr XAttributeTimeStamp) GetKey() string {
+	return attr.Key
+}
 func NewXAttributeDTimeStamp(key string, value string, extensions []XExtension) (*XAttributeTimeStamp, error) {
 
 	attr := &XAttributeTimeStamp{
 		Key:        key,
 		Extensions: extensions,
-		value:      value,
+		Value:      value,
 	}
 
 	return attr, nil

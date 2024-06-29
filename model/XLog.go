@@ -16,8 +16,8 @@ type XLog struct {
 	Traces                []XTrace
 	GlobalTraceAttributes []attributes.XAttribute
 	GlobalEventAttributes []attributes.XAttribute
-	extensions            []XExtension
-	classifiers           []XClassifier
+	extensions            []attributes.XExtension
+	classifiers           []attributes.XClassifier
 }
 
 // MarshalXML customizes the XML marshaling for the Person struct
@@ -44,9 +44,8 @@ func (x XLog) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 	// Marshal the MaleFriends with gender attribute
 	for _, globalEvent := range x.GlobalEventAttributes {
 
-		attrElem := xml.StartElement{Name: xml.Name{Local: fmt.Sprintf("%T\n key", globalEvent.Key)}}
-		attrElem.Attr = []xml.Attr{{Name: xml.Name{Local: "key"}, Value: globalEvent.Key}}
-
+		attrElem := xml.StartElement{Name: xml.Name{Local: fmt.Sprintf("%T\n key", globalEvent.GetKey())}}
+		attrElem.Attr = []xml.Attr{{Name: xml.Name{Local: "key"}, Value: globalEvent.GetKey()}}
 		if err := e.EncodeToken(attrElem); err != nil {
 			return err
 		}
@@ -59,8 +58,8 @@ func (x XLog) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 	}
 	// Marshal the FemaleFriends with gender attribute
 	for _, globalEvent := range x.GlobalTraceAttributes {
-		attrElem := xml.StartElement{Name: xml.Name{Local: fmt.Sprintf("%T\n key", globalEvent.Key)}}
-		attrElem.Attr = []xml.Attr{{Name: xml.Name{Local: "key"}, Value: globalEvent.Key}}
+		attrElem := xml.StartElement{Name: xml.Name{Local: fmt.Sprintf("%T\n key", globalEvent.GetKey())}}
+		attrElem.Attr = []xml.Attr{{Name: xml.Name{Local: "key"}, Value: globalEvent.GetKey()}}
 		if err := e.EncodeToken(startElement); err != nil {
 			return err
 		}
