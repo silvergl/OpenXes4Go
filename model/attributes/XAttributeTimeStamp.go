@@ -21,7 +21,7 @@ func (attr XAttributeTimeStamp) GetAttributes() map[string]XAttribute {
 	return attr.attributes
 }
 
-func (attr XAttributeTimeStamp) GetValue() string {
+func (attr XAttributeTimeStamp) GetValue() interface{} {
 	return attr.Value
 }
 func (attr XAttributeTimeStamp) GetKey() string {

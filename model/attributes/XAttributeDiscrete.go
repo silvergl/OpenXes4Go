@@ -21,7 +21,7 @@ func (attr XAttributeDiscrete) GetAttributes() map[string]XAttribute {
 	return attr.attributes
 }
 
-func (attr XAttributeDiscrete) GetValue() int {
+func (attr XAttributeDiscrete) GetValue() interface{} {
 	return attr.Value
 }
 func (attr XAttributeDiscrete) GetKey() string {

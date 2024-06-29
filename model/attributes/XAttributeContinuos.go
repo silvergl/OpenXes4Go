@@ -19,7 +19,7 @@ func (attr XAttributeContinuos) GetAttributes() map[string]XAttribute {
 	return attr.attributes
 }
 
-func (attr XAttributeContinuos) GetValue() float64 {
+func (attr XAttributeContinuos) GetValue() interface{} {
 	return attr.Value
 }
 func (attr XAttributeContinuos) GetKey() string {

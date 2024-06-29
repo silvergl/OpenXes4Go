@@ -21,7 +21,7 @@ func (attr XAttributeID) GetAttributes() map[string]XAttribute {
 	return attr.attributes
 }
 
-func (attr XAttributeID) GetValue() string {
+func (attr XAttributeID) GetValue() interface{} {
 	return attr.Value
 }
 func (attr XAttributeID) GetKey() string {

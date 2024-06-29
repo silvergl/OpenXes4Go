@@ -19,7 +19,7 @@ func (attr XAttributeBoolean) GetAttributes() map[string]XAttribute {
 	return attr.attributes
 }
 
-func (attr XAttributeBoolean) GetValue() bool {
+func (attr XAttributeBoolean) GetValue() interface{} {
 	return attr.Value
 }
 func (attr XAttributeBoolean) GetKey() string {
