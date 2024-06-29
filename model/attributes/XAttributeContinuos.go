@@ -15,7 +15,7 @@ func (attr XAttributeContinuos) GetExtensions() []XExtension {
 	return attr.Extensions
 }
 
-func (attr XAttributeContinuos) GetExtension(name string) map[string]XAttribute {
+func (attr XAttributeContinuos) GetAttributes() map[string]XAttribute {
 	return attr.attributes
 }
 

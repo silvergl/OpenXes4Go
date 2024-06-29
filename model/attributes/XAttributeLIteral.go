@@ -17,7 +17,7 @@ func (attr XAttributeLiteral) GetExtensions() []XExtension {
 	return attr.Extensions
 }
 
-func (attr XAttributeLiteral) GetExtension(name string) map[string]XAttribute {
+func (attr XAttributeLiteral) GetAttributes() map[string]XAttribute {
 	return attr.attributes
 }
 

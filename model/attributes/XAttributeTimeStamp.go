@@ -17,7 +17,7 @@ func (attr XAttributeTimeStamp) GetExtensions() []XExtension {
 	return attr.Extensions
 }
 
-func (attr XAttributeTimeStamp) GetExtension(name string) map[string]XAttribute {
+func (attr XAttributeTimeStamp) GetAttributes() map[string]XAttribute {
 	return attr.attributes
 }
 

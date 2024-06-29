@@ -15,7 +15,7 @@ func (attr XAttributeBoolean) GetExtensions() []XExtension {
 	return attr.Extensions
 }
 
-func (attr XAttributeBoolean) GetExtension(name string) map[string]XAttribute {
+func (attr XAttributeBoolean) GetAttributes() map[string]XAttribute {
 	return attr.attributes
 }
 

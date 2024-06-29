@@ -4,7 +4,7 @@ type XAttribute interface {
 	XAttributeMarker()
 	GetKey() string
 	GetValue() interface{}
-	GetExtensions() interface{}
-	GetAttributes() interface{}
+	GetExtensions() []XExtension
+	GetAttributes() map[string]XAttribute
 	//Attributable
 }
